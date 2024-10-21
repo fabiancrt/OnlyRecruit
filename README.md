@@ -84,8 +84,6 @@ Check out a live demo of ONLYRECRUIT at the end of this page.
 ---
 ![Highlights GIF](assets/Picture4.gif)
 ---
-![Highlights GIF](assets/Picture4.gif)
----
 ![Highlights GIF](assets/Picture5.gif)
 ---
 ![Highlights GIF](assets/Picture6.gif)
