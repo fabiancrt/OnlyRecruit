@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}Add Project{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="wtor-title">Add Project to {{ folder.name }}</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_name" class="preview-title flicker-underline">Name:</label>
+            {{ form.name }}
+        </div>
+        <div class="form-group">
+            <label for="id_github_link" class="preview-title flicker-underline">Github link:</label>
+            {{ form.github_link }}
+        </div>
+        <div class="form-group">
+            <label for="id_video" class="preview-title flicker-underline">Video:</label>
+            {{ form.video }}
+            <button type="button" class="btn custom-upload-btn" onclick="document.getElementById('id_video').click();">Choose Video</button>
+            <span id="video-file-name" class="file-name">Choose file.</span>
+        </div>
+        <div class="form-group">
+            <label for="id_image" class="preview-title flicker-underline">Image:</label>
+            {{ form.image }}
+            <button type="button" class="btn custom-upload-btn" onclick="document.getElementById('id_image').click();">Choose Image</button>
+            <span id="image-file-name" class="file-name">Choose file.</span>
+        </div>
+        <div class="form-group">
+            <label for="id_description" class="preview-title flicker-underline">Description:</label>
+            {{ form.description }}
+            <small class="form-text preview-title2 flicker-underline">Max 150 words.</small>
+        </div>
+        <div id="link-forms">
+            {{ link_formset.management_form }}
+            {% for form in link_formset %}
+            <div class="form-group">
+                <label class="preview-title flicker-underline">Link Label:</label>
+                {{ form.label }}
+                <label class="preview-title flicker-underline">Link URL:</label>
+                {{ form.url }}
+            </div>
+            {% endfor %}
+        </div>
+        <button type="submit" class="btn">Add Project</button>
+    </form>
+</div>
+
+<div class="cyber-background">
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+</div>
+
+<link rel="stylesheet" href="{% static 'css/add_project.css' %}">
+<script src="{% static 'js/add_project.js' %}"></script>
+{% endblock %}

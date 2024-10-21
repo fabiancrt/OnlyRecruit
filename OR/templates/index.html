@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+{%load static%}
+{% block title %}Welcome to OnlyRecruit{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="jumbotron text-center">
+        <h1 class="display-4 wtor-title">Welcome to OnlyRecruit</h1>
+        <p class="lead wtor-description">A platform where you can securely upload your projects and showcase them to top recruiters.</p>
+        <hr class="my-4 futuristic-hr">
+        <p class="wtor-description-2">Sign up now to get started and manage your projects!</p>
+        <a class="btn btn-lg create-nf-button" href="{% url 'sign_up' %}" role="button">Sign Up</a>
+    </div>
+    </div>
+    
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card project-card">
+                    <div class="card-body">
+                        <h5 class="card-title-securityt">
+                            Secure Uploads
+                            <span class="lock-icon">🔒</span>
+                        </h5>
+                        <p class="card-text-security">Your projects are securely stored and only accessible by you.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card project-card">
+                    <div class="card-body">
+                        <h5 class="card-title-visibility">
+                            Visibility to Top Recruiters
+                            <span class="eye-icon">👁</span>
+                        </h5>
+                        <p class="card-text-visibility">Get your projects organized and noticed by top recruiters.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card project-card">
+                    <div class="card-body">
+                        <h5 class="card-title-easy">
+                            Easy to Use
+                            <span class="hand-icon">👉</span>
+                            <span class="check-icon">✔️</span>
+                        </h5>
+                        <p class="card-text-easy">Our platform is user-friendly and easy to navigate.<span class="smiley">   ☻</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="cyber-background">
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+</div>
+
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+{% endblock %}

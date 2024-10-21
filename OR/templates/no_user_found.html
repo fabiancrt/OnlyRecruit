@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}No User Found{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="wtor-title">User Not Found</h2>
+    <p class="lead wtor-description">Sorry, the user you are looking for does not exist.</p>
+    <a class="create-nf-button btn btn-lg" href="{% url 'home' %}" role="button">Go Back to Home</a>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card folder-card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Possible Reasons:</h5>
+                    <ul>
+                        <li>The username might be incorrect.</li>
+                        <li>The user might have deleted their account.</li>
+                        <li>There might be a typo in the username.</li>
+                    </ul>
+                    <a id="try-again-button" class="btn btn-theme-secondary btn-sm">Try Again</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cyber-background">
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+</div>
+
+<link rel="stylesheet" href="{% static 'css/no_user_found.css' %}">
+<script src="{% static 'js/no_user_found.js' %}"></script>
+{% endblock %}

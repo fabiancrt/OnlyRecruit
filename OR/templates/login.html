@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+{%load static%}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="wtor-title">Login</h2>
+    <form method="post" id="login-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_username" class="preview-title flicker-underline">Username:</label>
+            <div class="input-wrapper">
+                {{ form.username }}
+            </div>
+            {% if form.username.errors %}
+                <div id="username-error" class="alert alert-danger">
+                    {% for error in form.username.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="id_password" class="preview-title flicker-underline">Password:</label>
+            <div class="input-wrapper">
+                {{ form.password }}
+            </div>
+            {% if form.password.errors %}
+                <div id="password-error" class="alert alert-danger">
+                    {% for error in form.password.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn">Login</button>
+    </form>
+    <hr>
+    <a href="{% url 'social:begin' 'github' %}" class="btn github-btn">
+        <img src="{% static 'images/github-icon3.png' %}" alt="GitHub Icon" class="github-icon">
+        Sign in with GitHub
+    </a>
+    <a href="{% url 'social:begin' 'google-oauth2' %}" class="btn google-btn">
+        <img src="{% static 'images/google-icon.png' %}" alt="Google Icon" class="google-icon">
+        Sign in with Google
+    </a>
+    <a href="{% url 'social:begin' 'linkedin-openidconnect' %}" class="btn linkedin-btn">
+        <img src="{% static 'images/linkedin-icon.png' %}" alt="LinkedIn Icon" class="linkedin-icon">
+        Sign in with LinkedIn
+    </a>
+</div>
+
+
+<div class="cyber-background">
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+</div>
+
+<script src="{% static 'js/login.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}

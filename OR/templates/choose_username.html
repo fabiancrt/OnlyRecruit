@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{%load static%}
+{% block title %}Choose Username{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="wtor-title">Choose Your Username</h2>
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+        {% if messages %}
+            <div class="alert alert-danger">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="form-group">
+            <input type="text" id="username" name="username" class="form-control short-input" >
+        </div>
+        <button type="submit" class="create-nf-button btn btn-lg">Submit</button>
+    </form>
+</div>
+
+
+<div class="cyber-background">
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+</div>
+
+
+<link rel="stylesheet" href="{% static 'css/choose_username.css' %}">
+<script src="{% static 'js/choose_username.js' %}"></script>
+{% endblock %}

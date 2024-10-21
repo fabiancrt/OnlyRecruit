@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{%load static%}
+{% block title %}Thank You{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="wtor-title">Thank You!</h2>
+    <p class="wtor-description">Your request has been submitted successfully.</p>
+    <p class="wtor-description">Your personal number is: <strong>{{ personal_number }}</strong></p>
+    <p class="wtor-description">Use this number to check the status of your request.</p>
+</div>
+
+<div class="cyber-background">
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+</div>
+<link rel="stylesheet" href="{% static 'css/thank_you.css' %}">
+{% endblock %}

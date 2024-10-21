@@ -1,0 +1,92 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}{{ folder.name }} Contents{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h2 class="wtor-title">Contents of {{ folder.name }}</h2>
+    <hr>
+    <div class="row">
+        {% for project in projects %}
+        <div class="col-md-4">
+            <div class="card project-card mb-4" data-project-id="{{ project.id }}">
+                <div class="card-body floating-card">
+                    {% if request.user == folder.user %}
+                    <button class="cyber-button-small" onclick="removeProject(this)">✖</button>
+                    {% endif %}
+                    <h5 class="card-title broken-light">{{ project.name }}</h5>
+                    {% if project.github_link %}
+                    <p class="card-text">
+                        <a href="{{ project.github_link }}" target="_blank" class="github-link">
+                            <img src="{% static 'images/github-icon3.png' %}" alt="GitHub" class="github-icon"> GitHub Link
+                        </a>
+                    </p>
+                    {% endif %}
+                    {% for link in project.links.all %}
+                    <p class="card-text">
+                        <a href="{{ link.url }}" target="_blank" class="custom-link github-link">
+                            {{ link.label }}
+                        </a>
+                    </p>
+                    {% endfor %}
+                    {% if project.description %}
+                    <div class="form-group">
+                        <label for="id_description" class="preview-title flicker-underline">Description:</label>
+                        <p class="description-text">{{ project.description }}</p>
+                    </div>
+                    {% endif %}
+                    {% if project.video %}
+                    <h6 class="preview-title">Preview Video</h6>
+                    <video width="100%" controls class="project-video">
+                        <source src="{{ project.video.url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    {% endif %}
+                    {% if project.image %}
+                    <h6 class="preview-title">Preview Image</h6>
+                    <img src="{{ project.image.url }}" class="img-fluid mt-2" alt="Project Image">
+                    {% endif %}
+                    {% if project.link_preview %}
+                    <h6 class="preview-title">Preview Link</h6>
+                    <img src="{{ project.link_preview }}" class="img-fluid mt-2" alt="Link Preview">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div id="deletePopup" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+        <p id="popupMessage"></p>
+        <button class="cyber-button-red" onclick="closePopup()">Cancel</button>
+        <button class="cyber-button-blue" onclick="confirmDelete()">I'm Sure</button>
+    </div>
+</div>
+
+<div class="cyber-background">
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+</div>
+
+<link rel="stylesheet" href="{% static 'css/view_contents.css' %}">
+<script src="{% static 'js/view_contents.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Showcase Dashboard{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="wtor-title">Showcase Requests</h2>
+    <hr>
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th class="wtor-table-head">Project</th>
+                        <th class="wtor-table-head">First Name</th>
+                        <th class="wtor-table-head">Last Name</th>
+                        <th class="wtor-table-head">Email</th>
+                        <th class="wtor-table-head">Company</th>
+                        <th class="wtor-table-head">Description</th>
+                        <th class="wtor-table-head">LinkedIn Profile</th>
+                        <th class="wtor-table-head">Status</th>
+                        <th class="wtor-table-head">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for request in requests %}
+                    <tr>
+                        <td class="wtor-table-cell">{{ request.folder.name }}</td> <!-- Assuming the folder is the project -->
+                        <td class="wtor-table-cell">{{ request.first_name }}</td>
+                        <td class="wtor-table-cell">{{ request.last_name }}</td>
+                        <td class="wtor-table-cell">{{ request.email }}</td>
+                        <td class="wtor-table-cell">{{ request.company }}</td>
+                        <td class="wtor-table-cell">{{ request.description }}</td>
+                        <td class="wtor-table-cell">
+                            <a href="{{ request.linkedin_profile }}" target="_blank" class="cyber-link">LinkedIn Profile</a>
+                        </td>
+                        <td class="wtor-table-cell">{{ request.status }}</td>
+                        <td class="wtor-table-cell">
+                            {% if request.status == 'pending' %}
+                            <div class="btn-container">
+                                <a href="{% url 'approve_request' request.id %}" class="btn-approve">Approve</a>
+                                <a href="{% url 'deny_request' request.id %}" class="btn-deny">Deny</a>
+                            </div>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="cyber-background">
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+</div>
+
+<link rel="stylesheet" href="{% static 'css/showcase_dashboard.css' %}">
+
+{% endblock %}

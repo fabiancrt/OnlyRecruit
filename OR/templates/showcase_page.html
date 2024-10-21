@@ -1,0 +1,123 @@
+{% extends 'layout.html' %}
+{%load static%}
+{% block title %}Showcase Folder{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="wtor-title">Showcase Folder: {{ folder.name }}</h2>
+    <form method="get" id="check-status-form">
+        <div class="form-group">
+            <label for="personal_number" class="preview-title flicker-underline">Enter your personal number to check request status:</label>
+            <div class="input-wrapper">
+                <input type="text" name="personal_number" id="personal_number" class="short-input" required>
+            </div>
+        </div>
+        <button type="submit" class="btn">Check Status</button>
+    </form>
+    <hr>
+    <form method="post" id="submit-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_first_name" class="preview-title flicker-underline">First Name:</label>
+            <div class="input-wrapper">
+                {{ form.first_name }}
+            </div>
+            {% if form.first_name.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.first_name.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="id_last_name" class="preview-title flicker-underline">Last Name:</label>
+            <div class="input-wrapper">
+                {{ form.last_name }}
+            </div>
+            {% if form.last_name.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.last_name.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="id_email" class="preview-title flicker-underline">Email:</label>
+            <div class="input-wrapper">
+                {{ form.email }}
+            </div>
+            {% if form.email.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.email.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="id_company" class="preview-title flicker-underline">Company:</label>
+            <div class="input-wrapper">
+                {{ form.company }}
+            </div>
+            {% if form.company.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.company.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="id_description" class="preview-title flicker-underline">Description:</label>
+            <div class="input-wrapper">
+                {{ form.description }}
+            </div>
+            {% if form.description.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.description.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="id_linkedin_profile" class="preview-title flicker-underline">LinkedIn Profile:</label>
+            <div class="input-wrapper">
+                {{ form.linkedin_profile }}
+            </div>
+            {% if form.linkedin_profile.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.linkedin_profile.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</div>
+
+<div class="cyber-background">
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+</div>
+<link rel="stylesheet" href="{% static 'css/showcase_page.css' %}">
+{% endblock %}

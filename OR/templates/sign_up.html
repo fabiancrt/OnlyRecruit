@@ -1,0 +1,103 @@
+{% extends 'layout.html' %}
+{%load static%}
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="wtor-title">Sign Up</h2>
+    <form method="post" id="sign-up-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_name" class="preview-title flicker-underline">Username:</label>
+            <div class="input-wrapper">
+                {{ form.username }}
+            </div>
+            {% if form.username.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.username.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="id_email" class="preview-title flicker-underline">Email Address:</label>
+            <div class="input-wrapper">
+                <input type="email" name="email" id="id_email" class="short-input" required>
+            </div>
+            {% if form.email.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.email.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="id_password1" class="preview-title flicker-underline">Password:</label>
+            <div class="input-wrapper">
+                {{ form.password1 }}
+            </div>
+            <small class="form-text text-muted" id="password-criteria" style="display: none;">
+            </small>
+            <ul id="password-requirements" class="form-text text-muted" style="display: none;">
+                <li id="length" class="invalid">At least 8 characters long</li>
+                <li id="uppercase" class="invalid">At least one uppercase letter</li>
+                <li id="lowercase" class="invalid">At least one lowercase letter</li>
+                <li id="digit" class="invalid">At least one digit</li>
+                <li id="special" class="invalid">At least one special character</li>
+                <li id="similar" class="invalid">Not similar to the username</li>
+            </ul>
+            {% if form.password1.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.password1.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="id_password2" class="preview-title flicker-underline">Confirm Password:</label>
+            <div class="input-wrapper">
+                {{ form.password2 }}
+            </div>
+            <div id="password-match-error" class="alert alert-danger" style="display: none;">
+                <p>Passwords do not match.</p>
+            </div>
+            {% if form.password2.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.password2.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn">Sign Up</button>
+    </form>
+</div>
+
+
+<div class="cyber-background">
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+</div>
+<link rel="stylesheet" href="{% static 'css/sign_up.css' %}">
+<script src="{% static 'js/sign_up.js' %}"></script>
+{% endblock %}

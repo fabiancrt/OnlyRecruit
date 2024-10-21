@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="wtor-title">Welcome to OnlyRecruit, {{ user.username }}</h2>
+    <p class="lead wtor-description">Manage your projects and showcase them to top recruiters.</p>
+    <a class="create-nf-button btn btn-lg" href="{% url 'create_folder' %}" role="button">Create New Folder</a>
+    <hr>
+    <div class="row">
+        {% for folder in folders %}
+        <div class="col-md-4">
+            <div class="card folder-card mb-4" data-folder-id="{{ folder.id }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ folder.name }}</h5>
+                    <a href="{% url 'add_project' folder.id %}" class="btn btn-theme-secondary btn-sm">Add Project</a>
+                    <a href="{% url 'view_contents' folder.id %}" class="btn btn-theme-info btn-sm">View Contents</a>
+                    <a href="{% url 'showcase_folder' folder.id %}" class="btn btn-theme-info btn-sm">Showcase Folder</a>
+                    <form method="post" action="{% url 'delete_folder' folder.id %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="button" class="btn btn-remove-folder btn-sm delete-folder-button" onclick="removeFolder(this)">Remove Folder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div id="deleteFolderPopup" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+        <p id="folderPopupMessage"></p>
+        <button class="cyber-button-red" onclick="closeFolderPopup()">Cancel</button>
+        <button class="cyber-button-blue" onclick="confirmFolderDelete()">I'm Sure</button>
+    </div>
+</div>
+
+
+<div class="cyber-background">
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+    <div class="cyber-line-horizontal"></div>
+</div>
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
