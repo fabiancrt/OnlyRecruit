@@ -27,9 +27,11 @@
 - **Optimized User Experience:** Ensured fast load times and intuitive navigation to keep recruiters engaged.
 - **Scalable Architecture:** Designed the platform to handle a growing user base without compromising performance.
 
+![Highlights GIF](assets/Picture1.gif)
+
 ## 📸 Demo
 
-Check out a live demo of ONLYRECRUIT [here](#).
+Check out a live demo of ONLYRECRUIT at the end of this page.
 
 ## 🚀 Getting Started
 
@@ -75,10 +77,18 @@ Check out a live demo of ONLYRECRUIT [here](#).
 7. **Access the application:**
     Open [http://localhost:8000](http://localhost:8000) in your browser.
 
-## 📫 Contact
 
-For more information or inquiries, please reach out to [your.email@example.com](mailto:your.email@example.com).
-
+## 📸 Demo
+#These are just demos , these are not all the features.
+![Highlights GIF](assets/Picture3.gif)
 ---
-
-*Empowering recruiters to discover top talent through secure and professional project showcases.*
+![Highlights GIF](assets/Picture4.gif)
+---
+![Highlights GIF](assets/Picture4.gif)
+---
+![Highlights GIF](assets/Picture5.gif)
+---
+![Highlights GIF](assets/Picture6.gif)
+---
+![Highlights GIF](assets/Picture7.gif)
+---
