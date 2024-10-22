@@ -1,4 +1,4 @@
-# Jarvis AI Assistant License Agreement
+# License Agreement
 
 **Effective Date:** 10/21/2024
 
@@ -8,7 +8,7 @@
 
 ## 1. Grant of License
 
-Subject to the terms and conditions of this Agreement, Licensor hereby grants Licensee a non-exclusive, non-transferable, limited license to use, modify, and distribute the Jarvis AI Assistant software ("Software") solely for recruitment purposes.
+Subject to the terms and conditions of this Agreement, Licensor hereby grants Licensee a non-exclusive, non-transferable, limited license to use, modify, and distribute the OnlyRecruit software ("Software") solely for recruitment purposes.
 
 ## 2. Restrictions
 
@@ -39,3 +39,7 @@ This Agreement shall be governed by and construed in accordance with the laws of
 ## 8. Entire Agreement
 
 This Agreement constitutes the entire agreement between the parties regarding the Software and supersedes all prior agreements and understandings.
+
+---
+
+**By using OnlyRecruit, you agree to the terms and conditions outlined in this License Agreement.**
